@@ -1,0 +1,3 @@
+/Users/rocha/Desktop/faculdade/ED/Trab1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/rocha/Desktop/faculdade/ED/Trab1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/rocha/Desktop/faculdade/ED/Trab1/cmake-build-debug/CMakeFiles/Trab1.dir
