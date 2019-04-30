@@ -12,7 +12,15 @@ int main() {
     scanf("%lf",&d);
     int v[n];
     for(int j =0;j<n;j++){
-        v[j]=rand() % (int)pow(10.0,d);
+        if(d==1){
+            v[j]=rand() % (int)pow(10.0,d);
+        }else{
+            v[j]=rand() % (int)pow(10.0,d);
+            while(v[j]<(int)pow(10.0,d-1)){
+                v[j]=rand() % (int)pow(10.0,d);
+            }
+        }
+
     }
     printf("tabela: ");
     for (int i=0;i<n;i++){
