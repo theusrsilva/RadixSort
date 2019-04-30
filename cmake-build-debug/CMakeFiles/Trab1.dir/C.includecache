@@ -9,4 +9,10 @@
 /Users/rocha/Desktop/faculdade/ED/Trab1/main.c
 stdio.h
 -
+stdlib.h
+-
+time.h
+-
+math.h
+-
 
