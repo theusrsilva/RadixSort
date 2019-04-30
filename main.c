@@ -14,7 +14,8 @@ int main() {
     for(int j =0;j<n;j++){
         v[j]=rand() % (int)pow(10.0,d);
     }
+    printf("tabela: ");
     for (int i=0;i<n;i++){
-        printf("%d\n",v[i]);
+        printf("%d ",v[i]);
     }
 }
