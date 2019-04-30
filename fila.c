@@ -8,18 +8,23 @@ fila* inicializaFila(){
 }
 fila* pushFila(fila* f, int n){
     fila* novo=(fila*)malloc(sizeof(fila));
-    novo->valor=n;
-    novo->prox=NULL;
-    fila *aux = f;
-    if(f!=NULL){
-        while (aux->prox != NULL) {
-            aux = aux->prox;
+    if (novo == NULL){
+        printf("Memoria cheia!");
+        return 0;
+    }else {
+        novo->valor = n;
+        novo->prox = NULL;
+        fila *aux = f;
+        if (f != NULL) {
+            while (aux->prox != NULL) {
+                aux = aux->prox;
+            }
+            aux->prox = novo;
+        } else {
+            f = novo;
         }
-        aux->prox = novo;
-    }else{
-        f = novo;
+        return f;
     }
-    return f;
 }
 fila* popFila(fila* f){
     if (f!=NULL){
