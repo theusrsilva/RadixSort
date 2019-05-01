@@ -2,6 +2,7 @@ typedef struct dados{
     int valor;
     struct dados *prox;
 }fila;
+int valor;
 
 fila* inicializaFila(){
     return NULL;
@@ -30,7 +31,7 @@ fila* popFila(fila* f){
     if (f!=NULL){
         fila *aux = f;
         f = f->prox;
-        int valor = aux->valor;
+        valor = aux->valor;
         free(aux);
         return f;
     }else{
