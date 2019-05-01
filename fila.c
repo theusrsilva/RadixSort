@@ -1,3 +1,5 @@
+#include <stdlib.h>
+
 typedef struct dados{
     int valor;
     struct dados *prox;
@@ -37,6 +39,13 @@ fila* popFila(fila* f){
     }else{
         printf("underflow");
         return NULL;
+    }
+}
+int estaVazia(fila* f){
+    if (f==NULL){
+        return 1;
+    }else{
+        return 0;
     }
 }
 void exibeFila(fila* f){
