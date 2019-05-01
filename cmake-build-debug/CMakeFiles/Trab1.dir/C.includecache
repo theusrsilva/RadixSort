@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 /Users/rocha/Desktop/faculdade/ED/Trab1/fila.c
+stdlib.h
+-
 
 /Users/rocha/Desktop/faculdade/ED/Trab1/main.c
 stdio.h
@@ -16,6 +18,8 @@ stdlib.h
 time.h
 -
 math.h
+-
+string.h
 -
 fila.c
 /Users/rocha/Desktop/faculdade/ED/Trab1/fila.c
