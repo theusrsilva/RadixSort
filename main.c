@@ -24,11 +24,11 @@ int main() {
             }
         }
     }
-    printf("tabela 1: ");
+    printf("tabela : ");
     for (int i=0;i<n;i++){
         printf("%d ",vetorInicial[i]);
     }
-    printf("\n");
+    printf("\n\n");
 
     fila* fila0;
     fila* fila1;
@@ -53,14 +53,24 @@ int main() {
 
     fila* vetorRadix[b]={fila0,fila1,fila2,fila3,fila4,fila5,fila6,fila7,fila8,fila9};
 
-
+    int help=1;
     for (int i =d-1;i>=0;i--){
+
         for(int j=0;j<n;j++){
             char str[(int)d+1];
             int k = vetorInicial[j];
             sprintf(str,"%d",vetorInicial[j]);
             vetorRadix[str[i]- '0']=pushFila(vetorRadix[str[i]- '0'],k);
         }
+        printf("Iteração %d : %dª distribuição\n\n",help,help);
+
+        for (int l = 0; l <b ; l++) {
+            printf("fila %d : ",l);
+            exibeFila(vetorRadix[l]);
+            printf("\n");
+        }
+        printf("\n");
+
         int t=0;
         for (int k=0; k<b;k++){
             while (!estaVazia(vetorRadix[k])){
@@ -70,13 +80,17 @@ int main() {
                 t++;
             }
         }
+        printf("tabela : ");
+        for (int i=0;i<n;i++){
+            printf("%d ",vetorInicial[i]);
+        }
+        printf("\n\n");
+        help++;
 
     }
+    printf("\n*******fim do radix sort*******\n");
 
-    printf("tabela: ");
-    for (int i=0;i<n;i++){
-        printf("%d ",vetorInicial[i]);
-    }
+
 
 
 }

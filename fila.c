@@ -51,7 +51,6 @@ int estaVazia(fila* f){
 void exibeFila(fila* f){
     fila* p;
     if(f!=NULL) {
-        printf("Fila: ");
         for (p = f; p != NULL; p = p->prox)
             printf("%d ", p->valor);
     }else{
