@@ -40,18 +40,11 @@ int main() {
     fila* fila7;
     fila* fila8;
     fila* fila9;
-    fila0=inicializaFila();
-    fila1=inicializaFila();
-    fila2=inicializaFila();
-    fila3=inicializaFila();
-    fila4=inicializaFila();
-    fila5=inicializaFila();
-    fila6=inicializaFila();
-    fila7=inicializaFila();
-    fila8=inicializaFila();
-    fila9=inicializaFila();
 
     fila* vetorRadix[b]={fila0,fila1,fila2,fila3,fila4,fila5,fila6,fila7,fila8,fila9};
+    for (int m = 0; m <b ; m++) {
+        vetorRadix[m]=inicializaFila();
+    }
 
     int help=1;
     for (int i =d-1;i>=0;i--){
