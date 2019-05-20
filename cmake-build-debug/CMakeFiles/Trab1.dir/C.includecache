@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-C:/Users/Rocha/Desktop/RadixSort/fila.c
+/Users/rocha/Desktop/faculdade/ED/trab 1/RadixSort/fila.c
 stdlib.h
 -
 stdio.h
 -
 
-C:/Users/Rocha/Desktop/RadixSort/main.c
+/Users/rocha/Desktop/faculdade/ED/trab 1/RadixSort/main.c
 stdio.h
 -
 stdlib.h
@@ -24,5 +24,5 @@ math.h
 string.h
 -
 fila.c
-C:/Users/Rocha/Desktop/RadixSort/fila.c
+/Users/rocha/Desktop/faculdade/ED/trab 1/RadixSort/fila.c
 

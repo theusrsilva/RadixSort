@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/Rocha/Desktop/RadixSort/main.c" "C:/Users/Rocha/Desktop/RadixSort/cmake-build-debug/CMakeFiles/Trab1.dir/main.c.obj"
+  "/Users/rocha/Desktop/faculdade/ED/trab 1/RadixSort/main.c" "/Users/rocha/Desktop/faculdade/ED/trab 1/RadixSort/cmake-build-debug/CMakeFiles/Trab1.dir/main.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "Clang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
