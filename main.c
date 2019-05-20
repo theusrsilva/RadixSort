@@ -15,14 +15,8 @@ int main() {
     scanf("%lf",&d);
     int vetorInicial[n];
     for(int j =0;j<n;j++){
-        if(d==1){
-            vetorInicial[j]=rand() % (int)pow(10.0,d);
-        }else{
-            vetorInicial[j]=rand() % (int)pow(10.0,d);
-            while(vetorInicial[j]<(int)pow(10.0,d-1)){
-                vetorInicial[j]=rand() % (int)pow(10.0,d);
-            }
-        }
+        vetorInicial[j]=rand() % (int)pow(10.0,d);
+
     }
     printf("tabela : ");
     for (int i=0;i<n;i++){
@@ -52,7 +46,7 @@ int main() {
         for(int j=0;j<n;j++){
             char str[(int)d+1];
             int k = vetorInicial[j];
-            sprintf(str,"%d",vetorInicial[j]);
+            sprintf(str,"%03d",vetorInicial[j]);
             vetorRadix[str[i]- '0']=pushFila(vetorRadix[str[i]- '0'],k);
         }
         printf("Iteração %d : %dª distribuição\n\n",help,help);

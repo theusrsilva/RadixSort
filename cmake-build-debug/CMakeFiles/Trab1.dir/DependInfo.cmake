@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "C:/Users/mateu/CLionProjects/RadixSort/main.c" "C:/Users/mateu/CLionProjects/RadixSort/cmake-build-debug/CMakeFiles/Trab1.dir/main.c.obj"
+  "C:/Users/Rocha/Desktop/RadixSort/main.c" "C:/Users/Rocha/Desktop/RadixSort/cmake-build-debug/CMakeFiles/Trab1.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
