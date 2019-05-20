@@ -9,6 +9,8 @@
 C:/Users/Rocha/Desktop/RadixSort/fila.c
 stdlib.h
 -
+stdio.h
+-
 
 C:/Users/Rocha/Desktop/RadixSort/main.c
 stdio.h

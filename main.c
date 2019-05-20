@@ -41,12 +41,13 @@ int main() {
     }
 
     int help=1;
+    int aux = (int)d;
     for (int i =d-1;i>=0;i--){
 
         for(int j=0;j<n;j++){
             char str[(int)d+1];
             int k = vetorInicial[j];
-            sprintf(str,"%03d",vetorInicial[j]);
+            sprintf(str,"%0.*d",aux,vetorInicial[j]);
             vetorRadix[str[i]- '0']=pushFila(vetorRadix[str[i]- '0'],k);
         }
         printf("Iteração %d : %dª distribuição\n\n",help,help);
