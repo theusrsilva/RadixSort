@@ -1,59 +1,65 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct dados{
-    int valor;
-    struct dados *prox;
+typedef struct item{
+    int dado;
+    struct item* prox;
+}Item;
+
+typedef struct queue{
+    Item* inicio;
+    Item* fim;
+
 }fila;
 int valor;
 
 fila* inicializaFila(){
-    return NULL;
+    fila* new = (fila*)malloc(sizeof(fila));
+    new->inicio=new->fim=NULL;
+    return new;
 }
 fila* pushFila(fila* f, int n){
-    fila* novo=(fila*)malloc(sizeof(fila));
+    Item* novo=(Item*)malloc(sizeof(Item));
     if (novo == NULL){
         printf("Memoria cheia!");
         return 0;
     }else {
-        novo->valor = n;
-        novo->prox = NULL;
-        fila *aux = f;
-        if (f != NULL) {
-            while (aux->prox != NULL) {
-                aux = aux->prox;
-            }
-            aux->prox = novo;
-        } else {
-            f = novo;
+        novo->dado=n;
+        novo->prox=NULL;
+        if(f->fim!=NULL){
+            f->fim->prox=novo;
+        }else{
+            f->inicio=novo;
         }
+        f->fim=novo;
         return f;
     }
+
 }
 fila* popFila(fila* f){
-    if (f!=NULL){
-        fila *aux = f;
-        f = f->prox;
-        valor = aux->valor;
+    if (f->inicio!=NULL){
+        Item*aux = f->inicio;
+        f->inicio=f->inicio->prox;
+        if(f->inicio==NULL){
+            f->fim=NULL;
+        }
+        valor=aux->dado;
         free(aux);
-        return f;
+
     }else{
-        printf("underflow");
-        return NULL;
+        printf("--PILHA VAZIA--");
     }
+    return f;
+
 }
-int estaVazia(fila* f){
-    if (f==NULL){
-        return 1;
-    }else{
-        return 0;
-    }
-}
+
 void exibeFila(fila* f){
-    fila* p;
-    if(f!=NULL) {
-        for (p = f; p != NULL; p = p->prox)
-            printf("%d ", p->valor);
+    Item* p = f->inicio;
+    if(f->inicio!=NULL) {
+        while (p!=NULL) {
+            printf("%d ", p->dado);
+            p=p->prox;
+        }
     }else{
         printf("Fila vazia.");
     }
