@@ -21,63 +21,76 @@ int main() {
 
     }//gera os n numeros aleatorios com d carateres
     printf("tabela : ");
-
-    for (int i=0;i<n;i++){
-        printf("%d ",vetorInicial[i]);
-    }//printa a tabela gerada aleatoriamente
-    printf("\n\n");
-
-
-    fila* vetorRadix[b];
-
-    for (int m = 0; m <b ; m++) {
-        fila*nova = inicializaFila();
-        vetorRadix[m]=nova;
-    }
-    printf("\n-------Filas Criadas------- \n");
-    //cria e inicializa as filas
-
-    int help=1;                                     //ajuda na formatção do print
-    int aux = (int)d;                               //transforma d em int para colocar no sprintf
-    for (int i =d-1;i>=0;i--){
-        //iterações
-        for(int j=0;j<n;j++){
-            char str[(int)d+1];                             //vetor que armazena os digitos do numero transformados em string
-            int k = vetorInicial[j];
-            sprintf(str,"%0.*d",aux,vetorInicial[j]);                           //manda para str o valor selecionado como string formatada completando os zeros a frente
-            vetorRadix[str[i]- '0']=pushFila(vetorRadix[str[i]- '0'],k);                    //da push na respectiva fila
-        }
-        printf("\n\nIteração %d : %dª distribuição\n\n",help,help);
-
-        //printa as filas cheias
-        for (int l = 0; l <b ; l++) {
-            printf("fila %d : ",l);
-            exibeFila(vetorRadix[l]);
-            printf("\n");
-        }
-        printf("\n");
-
-        int t=0;
-        for (int k=0; k<b;k++){
-            while (vetorRadix[k]->inicio!=NULL){
-                vetorRadix[k]=popFila(vetorRadix[k]);
-                int aux = valor;
-                vetorInicial[t]=aux;
-                t++;
-            }
-        }
-        //esvazia as filas passando para o vetor
-
-        printf("tabela : ");
-        for (int i=0;i<n;i++){
-            printf("%d ",vetorInicial[i]);
-        }
-        //printa o vetor depois das iterações
+    if(n!=0) {
+        for (int i = 0; i < n; i++) {
+            printf("%d ", vetorInicial[i]);
+        }//printa a tabela gerada aleatoriamente
         printf("\n\n");
-        help++;
-
+    }else{
+        printf("Vazia.");
     }
-    printf("\n*******fim do radix sort*******\n");
+    if (n!=0) {
+        fila* vetorRadix[b];
+
+
+        //cria e inicializa as filas
+        for (int m = 0; m <b ; m++) {
+            fila*nova = inicializaFila();
+            vetorRadix[m]=nova;
+        }
+
+
+        printf("\n-------Filas Criadas------- \n");
+
+
+        int help=1;                                     //ajuda na formatção do print
+
+        int aux = (int) d;                               //transforma d em int para colocar no sprintf
+        for (int i = d - 1; i >= 0; i--) {
+            //iterações
+            for (int j = 0; j < n; j++) {
+                char str[(int) d +
+                         1];                             //vetor que armazena os digitos do numero transformados em string
+                int k = vetorInicial[j];
+                sprintf(str, "%0.*d", aux,
+                        vetorInicial[j]);                           //manda para str o valor selecionado como string formatada completando os zeros a frente
+                vetorRadix[str[i] - '0'] = pushFila(vetorRadix[str[i] - '0'],
+                                                    k);                    //da push na respectiva fila
+            }
+            printf("\n\nIteração %d : %dª distribuição\n\n", help, help);
+
+            //printa as filas cheias
+            for (int l = 0; l < b; l++) {
+                printf("fila %d : ", l);
+                exibeFila(vetorRadix[l]);
+                printf("\n");
+            }
+            printf("\n");
+
+            int t = 0;
+            for (int k = 0; k < b; k++) {
+                while (vetorRadix[k]->inicio != NULL) {
+                    vetorRadix[k] = popFila(vetorRadix[k]);
+                    int aux = valor;
+                    vetorInicial[t] = aux;
+                    t++;
+                }
+            }
+
+            //esvazia as filas passando para o vetor
+
+            printf("tabela : ");
+                for (int i = 0; i < n; i++) {
+                    printf("%d ", vetorInicial[i]);
+                }                                           //printa o vetor depois das iterações
+
+                printf("\n\n");
+                help++;
+
+
+        }
+    }
+    printf("\n\n*******fim do radix sort*******\n\n");
 
 
 
